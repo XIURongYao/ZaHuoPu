@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bookstore.mapper.ClientMapper">
+
+	<select  id="getClient" parameterType="int" resultType="cn.bookstore.po.Client">
+		
+		select * from z_client 
+	
+	</select>
+	
+
+    <select id="getClientPage" parameterType="int" resultType="cn.bookstore.po.Client">
+ 
+        select * from z_client limit #{xiabiao},10;
+
+    </select>
+	
+
+	<insert id="addClient" parameterType="cn.bookstore.po.Client" >
+		
+		insert into z_client(c_name,c_site,c_short,c_code,c_phone,c_fax,c_connection) values
+		(#{c_name},#{c_site},#{c_short},#{c_code},#{c_phone},#{c_fax},#{c_connection});
+		
+		
+	</insert>
+
+	
+	
+	
+	
+	
+	
+
+	<!-- 
+		
+			#{}  是替代作用      占位符  ？
+			${}  是拼接作用    +
+	
+	 -->
+	 
+	 <update parameterType="cn.bookstore.po.Client" id="updateClient">
+	 
+	     update z_client set c_name=#{c_name},c_site=#{c_site},c_short=#{c_short},c_code=#{c_code},
+	     c_phone=#{c_phone},c_fax=#{c_fax},c_connection=#{c_connection} where c_id=#{c_id}
+	 
+	 
+	 </update>
+	 
+	 
+	 
+	 <delete parameterType="int" id="deleteClient">
+	 
+	      delete from z_client where c_id=#{c_id}
+	      
+	 </delete>
+	 
+	 
+	 
+
+</mapper>
+
+

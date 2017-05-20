@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bookstore.mapper.SellMapper">
+
+	<select  id="getSell" parameterType="int" resultType="cn.bookstore.po.Sell">
+		
+		select * from z_sell
+	
+	</select>
+	
+	<select  id="getSellPage" parameterType="int" resultType="cn.bookstore.po.Sell">
+		
+		select * from z_sell limit #{xiabiao},10;
+	
+	</select>
+	
+
+	
+
+	<insert id="addSell" parameterType="cn.bookstore.po.Sell" >
+		
+		insert into z_sell(m_id,m_name,m_norms,m_price,m_num,se_price,c_name,se_site) values
+		(#{m_id},#{m_name},#{m_norms},#{m_price},#{m_num},#{se_price},#{c_name},#{se_site});
+		
+		
+	</insert>
+
+	
+	
+	
+	
+	
+	
+
+	<!-- 
+		
+			#{}  是替代作用      占位符  ？
+			${}  是拼接作用    +
+	
+	 -->
+	 
+	 <update parameterType="cn.bookstore.po.Sell" id="updateSell">
+	 
+	     update z_sell set m_id=#{m_id},m_name=#{m_name},m_norms=#{m_norms},m_price=#{m_price},
+	     m_num=#{m_num},se_price=#{se_price},c_name=#{c_name},se_site=#{se_site} where se_id=#{se_id}
+	 
+	 
+	 </update>
+	 
+	 
+	 
+	 <delete parameterType="int" id="deleteSell">
+	 
+	      delete from z_sell where se_id=#{se_id}
+	      
+	 </delete>
+	 
+	 
+	 
+
+</mapper>
+
+

@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+	#table{
+	
+	text-align:center;
+	line-height:30px;
+	margin:auto;
+	
+	}
+	
+	
+	#dadiv{
+	
+	border:0px solid red;
+	margin:auto;
+    height:450px;
+   
+	
+	}
+	
+	#zhongdiv{
+	width:500px;
+	border:0px solid red;
+	margin:auto;height:350px;
+    text-align:center;
+	}
+	

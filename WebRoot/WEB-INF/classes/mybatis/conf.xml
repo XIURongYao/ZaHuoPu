@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration  
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<!-- 这是根标签  -->  
+<configuration> 
+
+	
+       
+    
+       
+       <!-- 自动扫描  -->
+	<mappers>
+	
+	        <package name="cn.bookstore.mapper"/>
+			
+			
+    </mappers>
+	
+	
+   
+   
+</configuration>

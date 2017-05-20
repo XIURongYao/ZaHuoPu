@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bookstore.mapper.BankMapper">
+
+	<select  id="getBank" parameterType="int" resultType="cn.bookstore.po.Bank">
+		
+		select * from z_bank 
+	
+	</select>
+	
+
+    <select id="getBankPage" parameterType="int" resultType="cn.bookstore.po.Bank">
+      
+         select * from z_bank limit #{xiabiao},10;
+    
+    </select>
+	
+
+	<insert id="addBank" parameterType="cn.bookstore.po.Bank" >
+		
+		insert into z_bank(m_id,m_name,m_norms,m_price,m_num,b_price,s_name) values
+		(#{m_id},#{m_name},#{m_norms},#{m_price},#{m_num},#{b_price},#{s_name});
+		
+		
+	</insert>
+
+	
+	
+	
+	
+	
+	
+
+	<!-- 
+		
+			#{}  是替代作用      占位符  ？
+			${}  是拼接作用    +
+	
+	 -->
+	 
+	 <update parameterType="cn.bookstore.po.Bank" id="updateBank">
+	 
+	     update z_bank set m_id=#{m_id},m_name=#{m_name},m_norms=#{m_norms},m_price=#{m_price},
+	     m_num=#{m_num},b_price=#{b_price},s_name=#{s_name} where b_id=#{b_id}
+	 
+	 
+	 </update>
+	 
+	 
+	 
+	 <delete id="deleteBank" parameterType="int" >
+	 
+	      delete from z_bank where b_id=#{b_id}
+	      
+	 </delete>
+	 
+	 
+	 
+
+</mapper>
+

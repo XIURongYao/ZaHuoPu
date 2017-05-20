@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bookstore.mapper.SupplierMapper">
+
+	<select  id="getSupplier" resultType="cn.bookstore.po.Supplier">
+		
+		select * from z_supplier
+	
+	</select>
+	
+	<select  id="getSupplierPage" parameterType="int" resultType="cn.bookstore.po.Supplier">
+		
+		select * from z_supplier limit #{xiabiao},10;
+	
+	</select>
+	
+
+	
+
+	<insert id="addSupplier" parameterType="cn.bookstore.po.Supplier" >
+		
+		insert into z_supplier(s_name,s_short,s_code,s_site,s_phone,s_fax,s_connection) values
+		(#{s_name},#{s_short},#{s_code},#{s_site},#{s_phone},#{s_fax},#{s_connection});
+		
+		
+	</insert>
+
+	
+	
+	
+	
+	
+	
+
+	<!-- 
+		
+			#{}  是替代作用      占位符  ？
+			${}  是拼接作用    +
+	
+	 -->
+	 
+	 <update parameterType="cn.bookstore.po.Supplier" id="updateSupplier">
+	 
+	     update z_supplier set s_name=#{s_name},s_short=#{s_short},s_code=#{s_code},s_site=#{s_site},s_phone=#{s_phone},
+	     s_fax=#{s_fax},s_connection=#{s_connection} where s_id=#{s_id}
+	 
+	 
+	 </update>
+	 
+	 
+	 
+	 <delete parameterType="int" id="deleteSupplier">
+	 
+	      delete from z_supplier where s_id=#{s_id}
+	      
+	 </delete>
+	 
+	 
+	 
+
+</mapper>
+
+
