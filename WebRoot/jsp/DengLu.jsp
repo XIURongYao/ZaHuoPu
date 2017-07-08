@@ -71,6 +71,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
 	<script type="text/javascript">
 	
+            //不需要密码，就登陆
+
 	        function no(){
 	        
             var zhanghao=document.forms["myform"]["zhanghao"].value;
